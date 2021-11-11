@@ -1,0 +1,53 @@
+﻿<Window x:Class="DemoCoursBDD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoCoursBDD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListBox Name="lstCategories" Grid.Row="0" Grid.Column="0" SelectionChanged="lstCategories_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NumeroCategorie}" VerticalAlignment="Center" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding NomCategorie}" VerticalAlignment="Center" Width="100"></TextBlock>
+                        <Image Source="{Binding ImageCategorie}" Height="80" Width="80"></Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <ListBox Name="lstJeux" Grid.Row="0" Grid.Column="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding IdJeux}" VerticalAlignment="Center" Width="50"></TextBlock>
+                        <TextBlock Text="{Binding NomJeux}" VerticalAlignment="Center" Width="100"></TextBlock>
+                        <Image Source="{Binding ImageJeux}" Height="80" Width="80"></Image>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Numéro de la catégorie"></TextBlock>
+            <TextBox Name="txtNumCateg" IsEnabled="False"></TextBox>
+            <TextBlock Text="Nom de la catégorie"></TextBlock>
+            <TextBox Name="txtNomCateg"></TextBox>
+            <Button Content="Ajouter la catégorie" Name="btnAjouterCategorie" Click="btnAjouterCategorie_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
