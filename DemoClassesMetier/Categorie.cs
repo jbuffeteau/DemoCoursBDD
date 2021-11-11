@@ -8,6 +8,7 @@ namespace DemoClassesMetier
 {
     public class Categorie
     {
+        // Membres privés
         private int numeroCategorie;
         private string nomCategorie;
         private string imageCategorie;
